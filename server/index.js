@@ -19,3 +19,7 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
 });
+
+app.use((req, res, next) => {
+  res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
+});
